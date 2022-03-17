@@ -14,3 +14,7 @@ For sl dataset I needed 12 minutes to parse 595067 documents.
 |B      |0.173767|
 |A      |0.103519|
 |MIX    |0.022823|
+
+MK language is the only file to not parse correctly. I solved that by limiting the number of rows I read.
+
+I moved the rest of the files to crawl1 and continued.
