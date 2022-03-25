@@ -18,3 +18,22 @@ For sl dataset I needed 12 minutes to parse 595067 documents.
 MK language is the only file to not parse correctly. I solved that by limiting the number of rows I read.
 
 I moved the rest of the files to crawl1 and continued.
+
+## Parser error:
+en-mk and en-mt had problems. I tried converting the tmx files to txt, but the problems persisted. I capped the rows of en-mk to 1200000 and of en-mt to 2514881. Didn't work.
+
+
+
+
+ /data1/lpla/macocu/permanent/bitextor-mt-output-en-mk-paragraph-and-loomchild-and-bicleanerai/en-mk.deduped.tmx.gz
+ /data1/lpla/macocu/permanent/bitextor-mt-output-en-bg-paragraph-and-loomchild-and-bicleanerai/
+ /data1/lpla/macocu/permanent/bitextor-mt-output-en-hr-paragraph-and-loomchild-and-bicleanerai/
+ /data1/lpla/macocu/permanent/bitextor-mt-output-en-sl-paragraph-and-loomchild-and-bicleanerai/
+
+ for lang in {mk,bg,hr,sl};
+ do
+cp "/data1/lpla/macocu/permanent/bitextor-mt-output-en-$lang-paragraph-and-loomchild-and-bicleanerai/en-$lang.deduped.tmx.gz" "/data1/peterr/bilingual_data_for_ABClf/en-$lang.deduped.tmx.gz";
+ done;
+
+ # Update
+It turned out that only turkish had problems with the parsing that I could not repair. The main problem was with fields being too long. I can partially fix that, but not without rendering the processing perversely long.
