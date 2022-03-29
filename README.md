@@ -36,4 +36,4 @@ cp "/data1/lpla/macocu/permanent/bitextor-mt-output-en-$lang-paragraph-and-loomc
  done;
 
  # Update
-It turned out that only turkish had problems with the parsing that I could not repair. The main problem was with fields being too long. I can partially fix that, but not without rendering the processing perversely long.
+It turned out that only turkish had problems with the parsing that I could not repair. The main problem was with fields being too long. I can partially fix that, but not without rendering the processing perversely long. I increased the field maximum length until the code would run without problems.
