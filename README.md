@@ -37,3 +37,17 @@ cp "/data1/lpla/macocu/permanent/bitextor-mt-output-en-$lang-paragraph-and-loomc
 
  # Update
 It turned out that only turkish had problems with the parsing that I could not repair. The main problem was with fields being too long. I can partially fix that, but not without rendering the processing perversely long. I increased the field maximum length until the code would run without problems.
+
+
+# Meeting notes - Nikola
+
+* https://github.com/macocu/crawling-documentation : document the pipeline for posterity and reproducibility
+* for {en-mk,en-sl} calculate domain level predictions in two ways: from the doc level input and from the doc level predictions, produce a table `domain|counts|domain-level-prediction-1|domain-level-prediction-2`
+* check the data a bit. A lot of the pairs are wonky.
+
+
+# Meeting notes:
+Prepare a overview for Taja:
+for en-sl pair:
+    for instances where bicleaner score > 0.5 and domain_en == domain_other:
+        count number of instances in a specific domain and generate a list for Taja
