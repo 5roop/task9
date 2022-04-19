@@ -76,7 +76,9 @@ csv.field_size_limit(131072 << 4)
 p = parse.compile("en-{lang}.deduped.txt")
 parse_results = p.parse(file)
 lang = parse_results["lang"]
-print(lang)
+if not lang:
+    logging.error("Got nonstandard input filename, could not infer language!")
+logging.info(f"Identified second language: {lang}")
 
 
 endpath = os.path.join(
@@ -164,6 +166,7 @@ if args.processes > 0:
         df.loc[df.domain_en == domain, "en_domain_level_variant"] = variant
     logging.info("Variant assigned, saving to ", endpath)
 if args.processes == 0:
+    logging.info("Aggregating document-level results...")
     gb = df.groupby("domain_en").en_document_level_variant.agg(
         lambda x: pd.Series.mode(x).iloc[0]
     )
