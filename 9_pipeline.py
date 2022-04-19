@@ -1,7 +1,5 @@
 # %%
 
-mydatadir = "/data1/peterr/bilingual_data_for_ABClf"
-outdir = "/data1/peterr/bilingual_data_for_ABClf_output/tsv"
 import argparse
 parser = argparse.ArgumentParser(description='Pipeline for assigning domain- and document- leven english variant')
 parser.add_argument('-i','--inputfile', required=True, help="Full path to input file (txt format)")
